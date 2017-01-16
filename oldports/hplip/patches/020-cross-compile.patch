@@ -1,0 +1,107 @@
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -8,7 +8,7 @@
+ CXXFLAGS+= -DCONFDIR=\"$(hplip_confdir)\"
+ 
+ hplipdir = $(datadir)/hplip
+-apparmordir = /etc/apparmor.d
++apparmordir = /opt/etc/apparmor.d
+ docdir = $(hpdocdir)
+ htmldir = $(hphtmldir)
+ doc_DATA = COPYING copyright prnt/hpijs/README_LIBJPG
+@@ -98,7 +98,6 @@
+ libhpmud_la_LDFLAGS += -lusb
+ else
+ libhpmud_la_SOURCES += io/hpmud/musb.c 
+-libhpmud_la_CFLAGS  += -I/usr/include/libusb-1.0
+ libhpmud_la_LDFLAGS += -lusb-1.0
+ endif
+ 
+@@ -125,18 +124,18 @@
+ dist_rulessystem_DATA =data/rules/hplip-printer@.service
+ 
+ # hpmud.rules
+-rulesdir = /etc/udev/rules.d
++rulesdir = /opt/etc/udev/rules.d
+ if UDEV_SYSFS_RULES
+ dist_rules_DATA = data/rules/56-hpmud_sysfs.rules
+ else
+ dist_rules_DATA = data/rules/56-hpmud.rules
+ endif
+ 
+-halpredir = /usr/share/hal/fdi/preprobe/10osvendor
++halpredir = /opt/share/hal/fdi/preprobe/10osvendor
+ dist_halpre_DATA = data/rules/20-hplip-devices.fdi
+ 
+ # hplip.conf
+-hplip_confdir = /etc/hp
++hplip_confdir = /opt/etc/hp
+ hplip_conf_DATA = hplip.conf
+ 
+ #pstotiff filter
+@@ -144,7 +143,7 @@
+ pstotiff_SCRIPTS = fax/filters/pstotiff
+ 
+ # hplip.state
+-hplip_statedir = /var/lib/hp
++hplip_statedir = /opt/var/lib/hp
+ dist_hplip_state_DATA =
+ 
+ if FULL_BUILD
+@@ -207,11 +206,11 @@
+ 
+ # AppArmor Changes
+ if APPARMOR_BUILD
+-apparmor_profiledir = /etc/apparmor.d
++apparmor_profiledir = /opt/etc/apparmor.d
+ apparmor_profile_DATA = apparmor/usr.share.hplip
+ dist_apparmor_profile_DATA = apparmor/usr.share.hplip
+ 
+-apparmor_abstractiondir = /etc/apparmor.d/abstractions
++apparmor_abstractiondir = /opt/etc/apparmor.d/abstractions
+ apparmor_abstraction_DATA = apparmor/abstractions/hplip
+ dist_apparmor_abstraction_DATA = apparmor/abstractions/hplip
+ 
+@@ -325,10 +324,6 @@
+ hpmudext_la_CFLAGS += -Iprotocol/discovery
+ endif
+ 
+-if !LIBUSB01_BUILD
+-hpmudext_la_CFLAGS +=-I/usr/include/libusb-1.0 
+-endif
+-
+ # ui (qt3)
+ if GUI_BUILD
+ if QT3_INSTALL
+@@ -415,9 +410,9 @@
+ 
+ # PolicyKit
+ if POLICYKIT_INSTALL
+-policykit_dbus_etcdir = /etc/dbus-1/system.d
++policykit_dbus_etcdir = /opt/etc/dbus-1/system.d
+ dist_policykit_dbus_etc_DATA = data/policykit/com.hp.hplip.conf
+-policykit_dbus_sharedir = /usr/share/dbus-1/system-services
++policykit_dbus_sharedir = /opt/share/dbus-1/system-services
+ dist_policykit_dbus_share_DATA = data/policykit/com.hp.hplip.service
+ policykit_policydir = $(policykit_dir)
+ dist_policykit_policy_DATA = data/policykit/com.hp.hplip.policy
+@@ -597,13 +592,13 @@
+ if HPLIP_BUILD
+ #	   If scanner build, add hpaio entry to sane dll.conf.
+ 	if [ "$(scan_build)" = "yes" ]; then \
+-	   $(mkinstalldirs) $(DESTDIR)/etc/sane.d; \
+-	   if [ ! -f $(DESTDIR)/etc/sane.d/dll.conf ]; then \
+-		  touch $(DESTDIR)/etc/sane.d/dll.conf; \
++	   $(mkinstalldirs) $(DESTDIR)/opt/etc/sane.d; \
++	   if [ ! -f $(DESTDIR)/opt/etc/sane.d/dll.conf ]; then \
++		  touch $(DESTDIR)/opt/etc/sane.d/dll.conf; \
+ 	   fi; \
+-	   if ! grep ^hpaio $(DESTDIR)/etc/sane.d/dll.conf >/dev/null 2>/dev/null ; then \
+-		  echo "Adding hpaio entry to /etc/sane.d/dll.conf." ; \
+-		  echo hpaio >>$(DESTDIR)/etc/sane.d/dll.conf ; \
++	   if ! grep ^hpaio $(DESTDIR)/opt/etc/sane.d/dll.conf >/dev/null 2>/dev/null ; then \
++		  echo "Adding hpaio entry to /opt/etc/sane.d/dll.conf." ; \
++		  echo hpaio >>$(DESTDIR)/opt/etc/sane.d/dll.conf ; \
+ 	   fi \
+ 	fi
+ if FULL_BUILD
