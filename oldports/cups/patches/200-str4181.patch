@@ -1,0 +1,13 @@
+--- a/backend/ipp.c
++++ b/backend/ipp.c
+@@ -1744,6 +1744,10 @@
+ 	  ippAddString(request, IPP_TAG_OPERATION, IPP_TAG_KEYWORD,
+ 		       "compression", NULL, compression);
+ 
++        if (compression)
++	  ippAddString(request, IPP_TAG_OPERATION, IPP_TAG_KEYWORD,
++		       "compression", NULL, compression);
++
+ 	fprintf(stderr, "DEBUG: Sending file %d using chunking...\n", i + 1);
+ 	http_status = cupsSendRequest(http, request, resource, 0);
+ 	if (http_status == HTTP_CONTINUE && request->state == IPP_DATA)

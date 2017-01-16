@@ -1,0 +1,13 @@
+--- a/locale/Makefile
++++ b/locale/Makefile
+@@ -193,7 +193,9 @@
+ 
+ strings2po:	strings2po.o
+ 	echo Linking $@...
+-	$(CC) $(ARCHFLAGS) $(LDFLAGS) -o strings2po strings2po.o
++	$(CC) $(ARCHFLAGS) $(LDFLAGS) -o strings2po strings2po.o \
++		../cups/$(LIBCUPSSTATIC) $(LIBGSSAPI) $(SSLLIBS) $(DNSSDLIBS) \
++		$(COMMONLIBS) $(LIBZ)
+ 
+ 
+ #
