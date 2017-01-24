@@ -11,3 +11,6 @@ The modified files (and parent directories) are contained in the 'packages', 'ol
 
 NOTE:  Mind your own security with CUPS.  Read the fancy manual pages, know what security level is right for you, and implement it.
 
+Changes:
+1/20/17- pull request for hplip was committed :  https://github.com/Entware-ng/entware-oldpackages-ports/commit/c5b2fd3751da6f4837c86275280f866940c7412c
+
