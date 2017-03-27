@@ -20,3 +20,5 @@ NOTE:  Mind your own security with CUPS.  Read the fancy manual pages, know what
   
   * 1/24/17 -  ARM7soft tarball was added for newer Broadcom ARM routers, e.g. RT-AC1900. Not yet tested.
 
+  * 2/15/17 -  ARM7soft tarball was tested and works on Asus RT-AC68R/U [ Tomato v1.28.0000 -138 K26ARM USB AIO-64K ].  Note that due to some newer versions of CUPS being listed in the official feeds, certain "force-" options such as "--force-checksum" might have to be used to install the packaged items.  Worked for me, YMMV.
+   
