@@ -20,9 +20,9 @@ NOTE:  Mind your own security with CUPS.  Read the fancy manual pages, know what
    
   * 1/24/17 -  ARM7soft tarball was added for newer Broadcom ARM routers, e.g. RT-AC1900. Not yet tested.
   
-  * 1/20/17 - pull request for **hplip** was committed :  https://github.com/Entware-ng/entware-oldpackages-ports/commit/c5b2fd3751da6f4837c86275280f866940c7412c .  As a consequence, you no longer have to install the non-vanilla/custom hplip package: use the one in the Entware-ng feed. 
+  * 1/20/17 - pull request for **hplip** was committed :  https://github.com/Entware-ng/entware-oldpackages-ports/commit/c5b2fd3751da6f4837c86275280f866940c7412c .  As a consequence, you no longer have to install the non-vanilla/custom hplip package: use the one in the Entware feed. 
   
-  * 1/9/17 - pull request for **python-lxml** was committed:  https://github.com/Entware-ng/entware-oldpackages-ports/commit/f1111943f6a020f8dabf93766a993f22d2d5ad22 .   As a consequence, you no longer have to install the non-vanilla/custom lxml package: use the one in the Entware-ng feed.
+  * 1/9/17 - pull request for **python-lxml** was committed:  https://github.com/Entware-ng/entware-oldpackages-ports/commit/f1111943f6a020f8dabf93766a993f22d2d5ad22 .   As a consequence, you no longer have to install the non-vanilla/custom lxml package: use the one in the Entware feed.
   
 
     
