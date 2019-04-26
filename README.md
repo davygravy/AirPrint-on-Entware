@@ -4,7 +4,7 @@
 
 AirPrint emulation on Entware with fewer hiccups
 
-This intends to be a predictable, no-surprises, quick-starting, no-mess, no-fuss and relatively painless way to get AirPrint emulation working on any capable Entware equipped router or other device. I've tested it extensively on my TomatoUSB and MerlinWRT mipsel/mipselsf routers.  I have not tested it on ARM or other devices. 
+This intends to be a predictable, no-surprises, quick-starting, no-mess, no-fuss and relatively painless way to get AirPrint emulation working on any capable Entware equipped router or other device. I've tested it extensively on my TomatoUSB/FreshTomato and MerlinWRT mipsel/mipselsf routers.  It works with both ARM and mipselsf-k2.6.  I have not tested it on the newer mipselsf-k3.4 devices, since I don't have one.
 
 A main goal was to make AirPrint emulation work out-of-the-box.  The package set is probably the most minimal that will support Airprint out-of-the-box.   For my part, I can only see one reason to install CUPS on a router:  AirPrint!  I set it up with regard keeping the packages as small as possible.  I wanted it to work right away, and not have to compile another component, adjust, mess around, etc.
 
@@ -14,7 +14,9 @@ NOTE:  Mind your own security with CUPS.  Read the fancy manual pages, know what
 
 *Changes:*
 
-  * 4/18/19 - Moved to Entware, away from Entware-ng.  At this point, only three non-vanilla ipk files need to be installed: cups, libcups and cups-filters.
+  * 4/26/19 -  Adding support for legacy routers running Entware-ng (mipselsf-k2.6).
+
+  * 4/18/19 - Moved towards Entware, slightly away from Entware-ng.  At this point for Entware, only three non-vanilla ipk files need to be installed: cups, libcups and cups-filters.
 
   * 2/15/17 -  ARM7soft tarball was tested and works on Asus RT-AC68R/U [ FreshTomato (19.1) K26ARM USB AIO-64K ].  Note that due to some newer versions of CUPS being listed in the official feeds, certain "force-" options such as "--force-checksum" might have to be used to install the packaged items.  Worked for me, YMMV.
    
