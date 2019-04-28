@@ -14,10 +14,14 @@ NOTE:  Mind your own security with CUPS.  Read the fancy manual pages, know what
 
 *Changes:*
 
-  * 4/26/19 -  Adding support for legacy routers running Entware-ng (mipselsf-k2.6).
-
+  * 4/26/19 -  Adding support for legacy routers running Entware-ng (mipselsf-k2.6).  Tested extensively on a Belkin ShareMax N300 running Toastman-TomatoUSB and Entware-ng.
+  
+  * 4/22/19 -  modifications to **cups-filters** , allowing normal interaction with CUPS and support for printers.  Also DejaVuMono font added as dependency.  https://github.com/Entware/rtndev/commit/abe03767f3557e951ca2f9c13c074fd199e6707 and  https://github.com/Entware/rtndev/commit/3b1b7ea7126b0883cc9ca77d6f05c811085503a6
+  
   * 4/18/19 - Moved towards Entware, slightly away from Entware-ng.  At this point for Entware, only three non-vanilla ipk files need to be installed: cups, libcups and cups-filters.
-
+  
+  * 4/16/19 -  found "missing cups device" in ghostscript, fixed by @auryzhov in git : https://github.com/Entware/rtndev/commit/c89550308444cc7820beaafa05a4b99d824d807a
+  
   * 2/15/17 -  ARM7soft tarball was tested and works on Asus RT-AC68R/U [ FreshTomato (19.1) K26ARM USB AIO-64K ].  Note that due to some newer versions of CUPS being listed in the official feeds, certain "force-" options such as "--force-checksum" might have to be used to install the packaged items.  Worked for me, YMMV.
    
   * 1/24/17 -  ARM7soft tarball was added for newer Broadcom ARM routers, e.g. RT-AC1900. Not yet tested.
