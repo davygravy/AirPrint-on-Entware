@@ -14,6 +14,9 @@ NOTE:  Mind your own security with CUPS.  Read the fancy manual pages, know what
 
 *Changes:*
 
+  * 5/2/19 - Adding support for legacy routers running Entware-backports (mipselsf-k2.6). Tested extensively on a Belkin ShareMax N300 running Toastman-TomatoUSB and Entware-backports.
+
+
   * 4/26/19 -  Adding support for legacy routers running Entware-ng (mipselsf-k2.6).  Tested extensively on a Belkin ShareMax N300 running Toastman-TomatoUSB and Entware-ng.
   
   * 4/22/19 -  modifications to **cups-filters** , allowing normal interaction with CUPS and support for printers.  Also DejaVuMono font added as dependency.  https://github.com/Entware/rtndev/commit/abe03767f3557e951ca2f9c13c074fd199e6707 and  https://github.com/Entware/rtndev/commit/3b1b7ea7126b0883cc9ca77d6f05c811085503a6
