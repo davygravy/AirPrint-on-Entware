@@ -14,7 +14,7 @@ NOTE:  Mind your own security with CUPS.  Read the fancy manual pages, know what
 
 *Changes:*
 
-  * 5/2/19 - Adding support for legacy routers running Entware-backports (mipselsf-k2.6). Tested extensively on a Belkin ShareMax N300 running Toastman-TomatoUSB and Entware-backports.
+  * 5/20/19 - Adding support for legacy routers running Entware-backports (mipselsf-k2.6). Tested extensively on a Belkin ShareMax N300 running Toastman-TomatoUSB and Entware-backports.
 
 
   * 4/26/19 -  Adding support for legacy routers running Entware-ng (mipselsf-k2.6).  Tested extensively on a Belkin ShareMax N300 running Toastman-TomatoUSB and Entware-ng.
